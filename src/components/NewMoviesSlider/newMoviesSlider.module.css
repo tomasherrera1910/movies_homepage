@@ -1,0 +1,54 @@
+.header{
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    color: #fff;
+    display:flex;
+    justify-content:center;
+}
+.headerContainer{
+    width:100%;
+    max-width:768px;
+    padding-left: 1em;
+}
+.headerContainer h3{
+    text-transform: uppercase;
+    font-size: 4em;
+    text-shadow: 2px 1px 4px #000;
+    font-weight: 500;
+    margin-top: 1em;
+}
+.genres{
+    font-size: 14px;
+    text-transform: uppercase;
+    text-shadow: 2px 1px 4px #000;
+    font-weight: 400;
+}
+.watchTrailerButton{
+    font-family: inherit;
+    padding: 0.8em 1.6em;
+    background-color: #ffd007;
+    border:none;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2em;
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.6);
+    transition: ease .3s;
+    margin-top: 1em;
+}
+.watchTrailerButton:hover{
+    filter:contrast(1.4);
+}
+.headerContainer p:not(.genres){
+    margin-top: 1em;
+    font-size: 14px;
+    font-weight: 300;
+    text-shadow: 2px 1px 4px #000;
+    letter-spacing: 1px;
+}
+.spanReleaseDate{
+    color:#ffd007;
+    text-shadow: 2px 1px 4px #000;
+    font-weight: 200;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,127 @@
+.navbar{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:0.5rem;
+    margin-bottom: 1em;
+    padding: 0 0.5em;
+}
+.navMenuSection {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap:1rem;
+    border-bottom: solid 1px #ddd;
+    text-align: center;
+}
+.navMenuSection a{
+    padding: 1em 0.5em;
+    text-decoration: none;
+    font-size: 12px;
+    transition: ease .3s;
+}
+.navMenuSection a:not(.active){
+    color: #000;
+}
+.navMenuSection a:hover{
+    color: #f1d94e;
+}
+.active{
+    font-weight: 700;
+    color: #ffd700;
+    border-bottom: 2px solid #ffd700;
+}
+.navMenuSection button{
+    font-family: inherit;
+    background-color: #ffd700;
+    color: #fff;
+    border:none;
+    font-size: 12px;
+    padding: 0.3em 0.5em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: ease .3s;
+}
+.navMenuSection button:hover{
+    color: #ffd700;
+    background: #eee;
+}
+.inputsSection{
+    margin-bottom: 0.5em;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    gap: 1em;
+}
+.inputsSection button{
+    border: none;
+    padding: 0.5em;
+    cursor:pointer;
+    transition: ease .3s;
+    color: #bbb;
+    font-size: 16px;
+}
+.inputsSection button:hover{
+    color: #666;
+}
+.inputsSection label{
+    color: #aaa;
+    font-size: 12px;
+}
+.slider{
+    -webkit-appearance: none;
+    display:block;
+    width: 90vw;
+    max-width: 240px;
+    height: 4px;
+    background: linear-gradient(90deg,#ffd700 50%, #ddd 50%);
+    opacity: .8;
+    transition: opacity .3s;
+}
+.slider:hover{
+    opacity:1;
+}
+/* for google chrome */
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height:12px;
+    background: #ffd700;
+    border-radius: 100%;
+    cursor:pointer
+}
+/* for mozilla firefox */
+.slider::-moz-range-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height:12px;
+    background: #ffd700;
+    border-radius: 100%;
+    cursor:pointer
+}
+.textInputBox{
+    position:relative;
+    width:100%;
+}
+.textInputBox input{
+    font-family: inherit;
+    width:100%;
+    height: 24px;
+    padding: 0.5em 2em 0.5em 0.5em;
+    background:none;
+    outline:none;
+    border:none;
+    border-bottom: 2px solid #ccc;
+}
+.searchIcon{
+    position:absolute;
+    right: 0;
+    top:0;
+    line-height:24px;
+    color: #ccc;
+}

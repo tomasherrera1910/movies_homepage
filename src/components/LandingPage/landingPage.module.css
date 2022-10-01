@@ -1,0 +1,24 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.mainSectionContainer{
+    position:relative;
+    top: -64px;
+    width:100vw;
+    max-width: 768px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    background-color: #eee;
+    border-radius: 0.5em;
+}
+.cardContainer{
+    display:flex;
+    gap:0.5em;
+    flex-wrap: wrap;
+    justify-content: center;
+}

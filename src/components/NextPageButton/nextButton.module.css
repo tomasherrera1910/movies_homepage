@@ -1,0 +1,30 @@
+.button{
+    background-color: #ffd700;
+    border:none;
+    padding: 1em;
+    margin: 1em 0 0 0;
+    color: #fff;
+    font-size: 16px;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    font-weight: 700;
+    cursor:pointer;
+    transition: ease-in-out .3s;
+}
+.button:hover{
+    filter: brightness(1.1);
+}
+.span{
+    background-color: #ffd700;
+    filter:brightness(0.9);
+    padding: 1em;
+    margin: 1em 0 0 0;
+    color: #fff;
+    font-size: 16px;
+    height: 48px;
+    width: 48px;
+    line-height: 1em;
+    border-radius: 50%;
+    font-weight: 700;
+}

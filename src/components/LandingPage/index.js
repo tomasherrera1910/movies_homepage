@@ -12,39 +12,34 @@ const { container, mainSectionContainer, cardContainer } = styles
 
 export default function LandingPage() {
   const [movies, setMovies] = useState([])
+  const [moviesVotesAverage, setMoviesVotesAverage] = useState(null)
   const [pageInfo, setPageInfo] = useState({ page: 1, totalPages: 2 })
   const [searchInputValue, setSearchInputValue] = useState("")
   const navigate = useNavigate()
   const [query] = useSearchParams()
   const search = query.get("search")
+  const [sliderValue, setSliderValue] = useState(5)
   const [loading, setLoading] = useState(true)
   const [loadingMoreMovies, setLoadingMoreMovies] = useState(false)
+
   useEffect(() => {
-    getMovies(`/discover/movie?page=1`)
+    getMovies(
+      search
+        ? `/search/movie?query=${search}&page=${pageInfo.page}`
+        : `/discover/movie?page=${pageInfo.page}`
+    )
       .then((data) => {
-        // console.log(data)
-        setMovies(data.results)
+        pageInfo.page !== 1
+          ? setMovies((prevMovies) => prevMovies.concat(data.results))
+          : setMovies(data.results)
         setPageInfo((prevPageInfo) => {
           return { ...prevPageInfo, totalPages: data.total_pages }
         })
       })
-      .finally(() => setLoading(false))
-  }, [])
-  useEffect(() => {
-    if (pageInfo.page !== 1 || search !== null) {
-      getMovies(
-        search
-          ? `/search/movie?query=${search}&page=${pageInfo.page}`
-          : `/discover/movie?page=${pageInfo.page}`
-      )
-        .then((data) => {
-          setMovies((prevMovies) => prevMovies.concat(data.results))
-          setPageInfo((prevPageInfo) => {
-            return { ...prevPageInfo, totalPages: data.total_pages }
-          })
-        })
-        .finally(() => setLoadingMoreMovies(false))
-    }
+      .finally(() => {
+        setLoadingMoreMovies(false)
+        setLoading(false)
+      })
   }, [pageInfo.page, search])
 
   const handlePage = () => {
@@ -58,6 +53,7 @@ export default function LandingPage() {
 
   const handleSubmitSearch = (e) => {
     e.preventDefault()
+    setMoviesVotesAverage(null)
     setMovies([])
     setPageInfo((prevPageInfo) => {
       return {
@@ -67,7 +63,13 @@ export default function LandingPage() {
     })
     navigate(`/?search=${searchInputValue}`)
   }
-  console.log(search)
+  const handleChangeSlider = (e) => {
+    setSliderValue(e.target.value)
+    setMoviesVotesAverage(
+      movies.filter((movie) => movie.vote_average >= e.target.value)
+    )
+  }
+
   if (loading) return <span>Loading movies... 😎</span>
   return (
     <main className={container}>
@@ -77,11 +79,15 @@ export default function LandingPage() {
           onChangeSearch={handleChangeSearch}
           onSubmitSearch={handleSubmitSearch}
           search={searchInputValue}
+          onChangeSlider={handleChangeSlider}
+          sliderValue={sliderValue}
         />
         <div className={cardContainer} key={search}>
-          {movies.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
+          {moviesVotesAverage
+            ? moviesVotesAverage.map((movie) => (
+                <MovieCard movie={movie} key={movie.id} />
+              ))
+            : movies.map((movie) => <MovieCard movie={movie} key={movie.id} />)}
         </div>
         <NextPageButton
           pageInfo={pageInfo}

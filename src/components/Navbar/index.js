@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faMagnifyingGlass,
@@ -17,8 +16,13 @@ const {
   textInputBox,
   searchIcon,
 } = styles
-export default function Navbar({ onChangeSearch, onSubmitSearch, search }) {
-  const [sliderValue, setSliderValue] = useState(5)
+export default function Navbar({
+  onChangeSearch,
+  onSubmitSearch,
+  search,
+  onChangeSlider,
+  sliderValue,
+}) {
   const handleSlider = () => {
     const slider = document.getElementById("slider")
     const value = slider.value * 10
@@ -55,9 +59,9 @@ export default function Navbar({ onChangeSearch, onSubmitSearch, search }) {
             type="range"
             max="10"
             min="0"
-            step="0.1"
+            step="0.5"
             value={sliderValue}
-            onChange={(e) => setSliderValue(e.target.value)}
+            onChange={onChangeSlider}
             onInput={handleSlider}
           />
         </label>

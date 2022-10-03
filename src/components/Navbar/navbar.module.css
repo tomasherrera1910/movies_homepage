@@ -68,8 +68,10 @@
     color: #666;
 }
 .inputsSection label{
-    color: #aaa;
+    color: #666;
+    opacity: .6;
     font-size: 12px;
+    transition: opacity .3s;
 }
 .slider{
     -webkit-appearance: none;
@@ -81,7 +83,8 @@
     opacity: .8;
     transition: opacity .3s;
 }
-.slider:hover{
+.slider:hover,
+.slider:hover .inputsSection label{
     opacity:1;
 }
 /* for google chrome */

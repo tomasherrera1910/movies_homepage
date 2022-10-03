@@ -1,7 +1,8 @@
 import { faPlay, faStar } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "./modalMovieDetail.module.css"
+import getMovieImage from "../../utils/getMovieImage"
 import MovieDetailsInfo from "./MovieDetailsInfo"
+import styles from "./modalMovieDetail.module.css"
 const {
   modalStyles,
   mainContainer,
@@ -22,10 +23,7 @@ export default function ModalMovieDetail({ movie, modal, modalHandle }) {
           <button onClick={modalHandle} className={closeModal}>
             X
           </button>
-          <img
-            src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-            alt={movie.title}
-          />
+          <img src={getMovieImage(movie.poster_path)} alt={movie.title} />
           <div className={rightSection}>
             <section className={sectionMovieInfo}>
               <MovieDetailsInfo movie={movie} />

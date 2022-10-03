@@ -11,7 +11,7 @@
 }
 .movieCardStyle img{
     width:200px;
-    height: auto;
+    height: 300px;
     object-fit: cover;
 }
 .movieCardFooter{

@@ -17,7 +17,7 @@ const {
   textInputBox,
   searchIcon,
 } = styles
-export default function Navbar() {
+export default function Navbar({ onChangeSearch, onSubmitSearch, search }) {
   const [sliderValue, setSliderValue] = useState(5)
   const handleSlider = () => {
     const slider = document.getElementById("slider")
@@ -61,10 +61,10 @@ export default function Navbar() {
             onInput={handleSlider}
           />
         </label>
-        <div className={textInputBox}>
-          <input type="text" />
+        <form className={textInputBox} onSubmit={onSubmitSearch}>
+          <input type="text" value={search} onChange={onChangeSearch} />
           <FontAwesomeIcon icon={faMagnifyingGlass} className={searchIcon} />
-        </div>
+        </form>
       </section>
     </header>
   )

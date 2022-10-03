@@ -2,8 +2,10 @@ import { useState } from "react"
 import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import DisplayGenres from "./DisplayGenres"
-import styles from "./movieCard.module.css"
 import ModalMovieDetail from "../ModalMovieDetail"
+import getMovieImage from "../../utils/getMovieImage"
+
+import styles from "./movieCard.module.css"
 const { movieCardStyle, movieCardFooter, rightFooterDecoration, genres } =
   styles
 
@@ -13,10 +15,7 @@ export default function MovieCard({ movie }) {
   return (
     <>
       <article className={movieCardStyle} onClick={modalHandle}>
-        <img
-          src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-          alt={movie.title}
-        />
+        <img src={getMovieImage(movie.poster_path)} alt={movie.title} />
         <footer className={movieCardFooter}>
           <h3>{movie.title.toUpperCase()}</h3>
           <DisplayGenres genres={movie.genre_ids} style={genres} />

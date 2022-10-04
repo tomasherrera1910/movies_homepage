@@ -18,7 +18,8 @@ export default function LandingPage() {
   const navigate = useNavigate()
   const [query] = useSearchParams()
   const search = query.get("search")
-  const [sliderValue, setSliderValue] = useState(5)
+  const [sliderValue, setSliderValue] = useState(1)
+  const [viewGrid, setViewGrid] = useState(true)
   const [loading, setLoading] = useState(true)
   const [loadingMoreMovies, setLoadingMoreMovies] = useState(false)
 
@@ -44,6 +45,7 @@ export default function LandingPage() {
 
   const handlePage = () => {
     setLoadingMoreMovies(true)
+    setMoviesVotesAverage(null)
     setPageInfo((prevPageInfo) => {
       return { ...prevPageInfo, page: prevPageInfo.page + 1 }
     })
@@ -81,13 +83,16 @@ export default function LandingPage() {
           search={searchInputValue}
           onChangeSlider={handleChangeSlider}
           sliderValue={sliderValue}
+          setViewGrid={setViewGrid}
         />
         <div className={cardContainer} key={search}>
           {moviesVotesAverage
             ? moviesVotesAverage.map((movie) => (
-                <MovieCard movie={movie} key={movie.id} />
+                <MovieCard movie={movie} viewGrid={viewGrid} key={movie.id} />
               ))
-            : movies.map((movie) => <MovieCard movie={movie} key={movie.id} />)}
+            : movies.map((movie) => (
+                <MovieCard movie={movie} viewGrid={viewGrid} key={movie.id} />
+              ))}
         </div>
         <NextPageButton
           pageInfo={pageInfo}

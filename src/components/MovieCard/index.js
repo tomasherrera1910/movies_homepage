@@ -6,15 +6,23 @@ import ModalMovieDetail from "../ModalMovieDetail"
 import getMovieImage from "../../utils/getMovieImage"
 
 import styles from "./movieCard.module.css"
-const { movieCardStyle, movieCardFooter, rightFooterDecoration, genres } =
-  styles
+const {
+  movieCardStyle,
+  movieCardFooter,
+  rightFooterDecoration,
+  genres,
+  movieCardSimple,
+} = styles
 
-export default function MovieCard({ movie }) {
+export default function MovieCard({ movie, viewGrid }) {
   const [modal, setModal] = useState(false)
   const modalHandle = () => setModal(!modal)
   return (
     <>
-      <article className={movieCardStyle} onClick={modalHandle}>
+      <article
+        className={viewGrid ? movieCardStyle : movieCardSimple}
+        onClick={modalHandle}
+      >
         <img src={getMovieImage(movie.poster_path)} alt={movie.title} />
         <footer className={movieCardFooter}>
           <h3>{movie.title.toUpperCase()}</h3>

@@ -57,15 +57,23 @@
     gap: 1em;
 }
 .inputsSection button{
-    border: none;
-    padding: 0.5em;
     cursor:pointer;
     transition: ease .3s;
-    color: #bbb;
     font-size: 16px;
+    padding: 0 0.5em;
+}
+.inputsSection button:not(.buttonActive){
+    border: none;
+    color: #bbb;
 }
 .inputsSection button:hover{
     color: #666;
+}
+.buttonActive{
+    color: #444;
+    background-color: #ddd;
+    border: 1px solid #000;
+    border-radius: 8px;
 }
 .inputsSection label{
     color: #666;
@@ -79,7 +87,7 @@
     width: 90vw;
     max-width: 240px;
     height: 4px;
-    background: linear-gradient(90deg,#ffd700 50%, #ddd 50%);
+    background: linear-gradient(90deg,#ffd700 10%, #ddd 10%);
     opacity: .8;
     transition: opacity .3s;
 }

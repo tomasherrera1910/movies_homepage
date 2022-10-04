@@ -15,6 +15,7 @@ const {
   slider,
   textInputBox,
   searchIcon,
+  buttonActive,
 } = styles
 export default function Navbar({
   onChangeSearch,
@@ -22,6 +23,7 @@ export default function Navbar({
   search,
   onChangeSlider,
   sliderValue,
+  setViewGrid,
 }) {
   const handleSlider = () => {
     const slider = document.getElementById("slider")
@@ -29,6 +31,14 @@ export default function Navbar({
     const color = `linear-gradient(90deg, #ffd700 ${value}%, #ddd ${value}%)`
     slider.style.background = color
   }
+  const handleViewClick = (gridValue, simpleValue, booleanValue) => {
+    const gridButton = document.querySelector('[name="grid-view"]')
+    const simpleButton = document.querySelector('[name="simple-view"]')
+    gridButton.classList[gridValue](buttonActive)
+    simpleButton.classList[simpleValue](buttonActive)
+    setViewGrid(booleanValue)
+  }
+
   return (
     <header className={navbar}>
       <nav className={navMenuSection}>
@@ -45,10 +55,17 @@ export default function Navbar({
         </button>
       </nav>
       <section className={inputsSection}>
-        <button>
+        <button
+          name="simple-view"
+          onClick={() => handleViewClick("remove", "add", false)}
+        >
           <FontAwesomeIcon icon={faBars} />
         </button>
-        <button>
+        <button
+          name="grid-view"
+          onClick={() => handleViewClick("add", "remove", true)}
+          className={buttonActive}
+        >
           <FontAwesomeIcon icon={faTableCells} />
         </button>
         <label>

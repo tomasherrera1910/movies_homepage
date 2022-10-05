@@ -136,3 +136,58 @@
     line-height:24px;
     color: #ccc;
 }
+.menuButton{
+    margin: 0.5em 0 0 0.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: ease .3s;
+    display:none;
+    align-self: flex-start;
+    color: #555;
+}
+.menuButton:hover{
+    color: #f1d94e;
+}
+.menuButton span{
+    height: 24px;
+    width: auto;
+    display:inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.menuButton svg{
+    font-size: 22px;
+}
+.showMenu{
+    left:0;
+}
+@media (max-width: 767px){
+    .menuButton{
+        display:block;
+    }
+    .navMenuSection {
+        flex-direction: column;
+        position:absolute;
+        top: 36px;
+        background-color: #eee;
+        font-weight: 500;
+        padding-bottom: 1em;
+        z-index: 4;
+        transition: ease-in-out .4s;
+    }
+    .navMenuSection:not(.showMenu){
+        left:-768px;
+    }
+}
+@media (max-width: 500px){
+    .inputsSection{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .textInputBox{
+        width: 90%;
+    }
+}

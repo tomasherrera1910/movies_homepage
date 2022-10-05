@@ -11,6 +11,7 @@ const {
   movieCardFooter,
   rightFooterDecoration,
   genres,
+  genresSimple,
   movieCardSimple,
 } = styles
 
@@ -26,7 +27,10 @@ export default function MovieCard({ movie, viewGrid }) {
         <img src={getMovieImage(movie.poster_path)} alt={movie.title} />
         <footer className={movieCardFooter}>
           <h3>{movie.title.toUpperCase()}</h3>
-          <DisplayGenres genres={movie.genre_ids} style={genres} />
+          <DisplayGenres
+            genres={movie.genre_ids}
+            style={viewGrid ? genres : genresSimple}
+          />
           <p>
             <FontAwesomeIcon icon={faHeart} color="rgb(214, 49, 49)" />{" "}
             {movie.vote_average}

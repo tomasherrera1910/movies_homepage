@@ -6,8 +6,8 @@
     transition: ease .5s;
 }
 .movieCardSimple{
-    flex:1;
     display:flex;
+    width: 90%;
     height: 120px;
     gap: 2em;
     background-color: #fff;
@@ -48,11 +48,12 @@
 .movieCardStyle .movieCardFooter h3{
     width:calc(200px - 0.5em);
 }
-.genres{
+.genres, .genresSimple{
     overflow:hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-weight: 500;
+    width: 90%;
     font-size: 10px;
     margin-bottom: 6px;
     color: #ffd700;
@@ -82,4 +83,47 @@
 .movieCardSimple:hover{
     transform:scale(1.05);
     -webkit-transform:scale(1.05);
+}
+@media (max-width: 520px){
+    .movieCardSimple{
+        gap:0.5em;
+    }
+    .movieCardSimple .movieCardFooter{
+        min-width:auto;
+        width:100%;
+        max-width: 100%;
+    }
+    .genresSimple{
+        width:260px;
+    }
+    .movieCardSimple .movieCardFooter h3{
+        width:240px;
+    }
+}
+@media (max-width: 400px){
+    .genresSimple{
+        width:200px;
+        }
+    .movieCardSimple .movieCardFooter h3{
+        width:200px;
+    }
+}
+@media (max-width: 348px){
+    .genresSimple{
+        width:160px;
+    }
+    .movieCardSimple .movieCardFooter h3{
+        width:160px;
+    }
+}
+@media (max-width: 310px){
+    .movieCardSimple{
+        height: 100px;
+    }
+    .genresSimple{
+        width:80px;
+    }
+    .movieCardSimple .movieCardFooter h3{
+        width:80px;
+    }
 }

@@ -15,7 +15,13 @@ const {
   movieCardSimple,
 } = styles
 
-export default function MovieCard({ movie, viewGrid }) {
+export default function MovieCard({
+  movie,
+  viewGrid,
+  handleAddFav,
+  handleDeleteFav,
+  isFav,
+}) {
   const [modal, setModal] = useState(false)
   const modalHandle = () => setModal(!modal)
   return (
@@ -42,7 +48,14 @@ export default function MovieCard({ movie, viewGrid }) {
           />
         </footer>
       </article>
-      <ModalMovieDetail movie={movie} modal={modal} modalHandle={modalHandle} />
+      <ModalMovieDetail
+        movie={movie}
+        modal={modal}
+        modalHandle={modalHandle}
+        handleAddFav={handleAddFav}
+        handleDeleteFav={handleDeleteFav}
+        isFav={isFav}
+      />
     </>
   )
 }

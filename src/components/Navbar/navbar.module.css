@@ -8,6 +8,11 @@
     margin-bottom: 1em;
     padding: 0 0.5em;
 }
+.navAndFavContainer{
+    display:flex;
+    align-self: flex-start;
+    width: 100%;
+}
 .navMenuSection {
     display:flex;
     align-items: center;
@@ -34,7 +39,7 @@
     color: #ffd700;
     border-bottom: 2px solid #ffd700;
 }
-.navMenuSection button{
+.navAndFavContainer button:not(.menuButton){
     font-family: inherit;
     background-color: #ffd700;
     color: #fff;
@@ -45,7 +50,7 @@
     cursor: pointer;
     transition: ease .3s;
 }
-.navMenuSection button:hover{
+.navAndFavContainer button:hover:not(.menuButton){
     color: #ffd700;
     background: #eee;
 }
@@ -61,6 +66,7 @@
     transition: ease .3s;
     font-size: 16px;
     padding: 0 0.5em;
+    text-align: center;
 }
 .inputsSection button:not(.buttonActive){
     border: none;
@@ -162,7 +168,30 @@
 .showMenu{
     left:0;
 }
+.favMenu{
+    position:absolute;
+    z-index: 2;
+    top:2.5em;
+    right: 0;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-height: 420px;
+    width: 300px;
+    overflow-y: scroll;
+    transition: ease .4s;
+}
+.favMenu:not(.showFavs){
+    display:none;
+}
+.showFavs{
+    display:block;
+}
 @media (max-width: 767px){
+    .navAndFavContainer{
+    justify-content: space-between;
+    padding: 0 2em;
+    }
     .menuButton{
         display:block;
     }

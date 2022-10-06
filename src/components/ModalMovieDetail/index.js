@@ -14,8 +14,16 @@ const {
   spanMovieProfile,
   buttonWatchTrailer,
   buttonWatchlist,
+  buttonRemoveFav,
 } = styles
-export default function ModalMovieDetail({ movie, modal, modalHandle }) {
+export default function ModalMovieDetail({
+  movie,
+  modal,
+  modalHandle,
+  handleAddFav,
+  handleDeleteFav,
+  isFav,
+}) {
   return (
     <dialog open={modal} className={modalStyles}>
       <div className={mainContainer}>
@@ -33,12 +41,29 @@ export default function ModalMovieDetail({ movie, modal, modalHandle }) {
               <span className={spanMovieProfile}>FULL MOVIE PROFILE ➡</span>
             </section>
             <div>
-              <button className={buttonWatchTrailer}>
+              <a
+                className={buttonWatchTrailer}
+                href={`https://www.youtube.com/results?search_query=${movie.title}%20trailer`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Watch Trailer <FontAwesomeIcon icon={faPlay} />
-              </button>
-              <button className={buttonWatchlist}>
-                To Watchlist <FontAwesomeIcon icon={faStar} />
-              </button>
+              </a>
+              {isFav(movie.id) ? (
+                <button
+                  className={buttonRemoveFav}
+                  onClick={() => handleDeleteFav(movie.id)}
+                >
+                  Remove from Watchlist <FontAwesomeIcon icon={faStar} />
+                </button>
+              ) : (
+                <button
+                  className={buttonWatchlist}
+                  onClick={() => handleAddFav(movie)}
+                >
+                  To Watchlist <FontAwesomeIcon icon={faStar} />
+                </button>
+              )}
             </div>
           </div>
         </article>

@@ -14,11 +14,14 @@
     box-shadow: 1px 0 2px 1px rgba(0, 0, 0, 0.5);
     transition: ease .3s;
 }
-
 .movieCardStyle img{
     width:200px;
     height: 300px;
     object-fit: cover;
+}
+.movieCardSimple img{
+    object-fit: cover;
+    max-width: 85px;
 }
 .movieCardStyle .movieCardFooter{
     padding: 0.2em 0.5em 0.7em 0.5em;

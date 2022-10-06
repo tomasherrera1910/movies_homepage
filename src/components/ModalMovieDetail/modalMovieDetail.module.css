@@ -62,7 +62,8 @@
     left:-32px;
     background: #fff;
     padding: 0.5em 0.5em 0 0.5em;
-    width: 480px;
+    min-width: 480px;
+    width: auto;
     box-shadow: 1px 0 6px 1px rgba(0, 0, 0, 0.4);
 }
 .sectionMovieTitle{
@@ -107,6 +108,8 @@
 }
 .sectionMovieDescription{
     width: 100%;
+    height: 33%;
+    overflow-y: scroll;
 }
 .sectionMovieDescription p{
     font-size: 10px;
@@ -123,25 +126,36 @@
     text-decoration: underline;
 }
 .buttonWatchTrailer,
-.buttonWatchlist{
+.buttonWatchlist,
+.buttonRemoveFav{
+    display: inline-block;
     border:none;
-    padding: 2em 0.5em;
+    padding: 1.5em 0.5em;
+    font-size: 16px;
     cursor:pointer;
     transition: ease-in-out .3s;
     text-align:center;
     width: 50%;
+    height:100%;
+    
 }
 .buttonWatchTrailer{
     background-color:#ffd700;
     color: #fff;
+    text-decoration: none;
 }
 .buttonWatchlist{
     background-color:#000;
     color: #ffd700;
 }
+.buttonRemoveFav{
+    background-color: #991111;
+    color: #fff;
+}
 .buttonWatchTrailer:hover,
-.buttonWatchlist:hover{
-    opacity: .6;
+.buttonWatchlist:hover,
+.buttonRemoveFav:hover{
+    opacity: .8;
 }
 @media (max-width: 767px){
     .cardDetail{
@@ -154,11 +168,15 @@
     .divDetailsMovie{
         left:-24px;
         padding: 0.2em 0.2em 0 0.2em;
-        width: auto;
+        min-width: auto;
     }
     .buttonWatchTrailer,
-    .buttonWatchlist{
+    .buttonWatchlist,
+    .buttonRemoveFav{
         padding: 1em 0.5em;
+    }
+    .buttonRemoveFav{
+        font-size: 12px;
     }
     
 }

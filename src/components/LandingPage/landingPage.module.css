@@ -7,7 +7,7 @@
 .mainSectionContainer{
     position:relative;
     top: -64px;
-    width:100vw;
+    width:100%;
     max-width: 768px;
     display:flex;
     flex-direction: column;

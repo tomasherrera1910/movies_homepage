@@ -1,3 +1,5 @@
+import { useNavbar } from "../../hooks/useNavbar"
+import FavCard from "./FavCard"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faMagnifyingGlass,
@@ -16,8 +18,9 @@ const {
   textInputBox,
   searchIcon,
   buttonActive,
+  navAndFavContainer,
   menuButton,
-  showMenu,
+  favMenu,
 } = styles
 export default function Navbar({
   onChangeSearch,
@@ -26,44 +29,37 @@ export default function Navbar({
   onChangeSlider,
   sliderValue,
   setViewGrid,
+  favs,
 }) {
-  const handleSlider = () => {
-    const slider = document.getElementById("slider")
-    const value = slider.value * 10
-    const color = `linear-gradient(90deg, #ffd700 ${value}%, #ddd ${value}%)`
-    slider.style.background = color
-  }
-  const handleViewClick = (gridValue, simpleValue, booleanValue) => {
-    const gridButton = document.querySelector('[name="grid-view"]')
-    const simpleButton = document.querySelector('[name="simple-view"]')
-    gridButton.classList[gridValue](buttonActive)
-    simpleButton.classList[simpleValue](buttonActive)
-    setViewGrid(booleanValue)
-  }
-  const handleToggle = () => {
-    const menu = document.querySelector('[name="menuNav"]')
-    menu.classList.toggle(showMenu)
-  }
+  const { handleToggleMenu, handleToggleFavs, handleSlider, handleViewClick } =
+    useNavbar(setViewGrid)
   return (
     <header className={navbar}>
-      <button className={menuButton} onClick={handleToggle}>
-        <span>
-          <FontAwesomeIcon icon={faBars} /> <span>Menú and Favorites</span>
-        </span>
-      </button>
-      <nav className={navMenuSection} name="menuNav">
-        <a href="/" className={active}>
-          TRENDING
-        </a>
-        <a href="/">IN THEATERS</a>
-        <a href="/">COMING SOON</a>
-        <a href="/">CHARTS</a>
-        <a href="/">TV SERIES</a>
-        <a href="/">TRAILERS</a>
-        <button>
-          <FontAwesomeIcon icon={faStar} /> 0
+      <div className={navAndFavContainer}>
+        <button className={menuButton} onClick={handleToggleMenu}>
+          <span>
+            <FontAwesomeIcon icon={faBars} /> <span>Menú</span>
+          </span>
         </button>
-      </nav>
+        <nav className={navMenuSection} name="menuNav">
+          <a href="/" className={active}>
+            TRENDING
+          </a>
+          <a href="/">IN THEATERS</a>
+          <a href="/">COMING SOON</a>
+          <a href="/">CHARTS</a>
+          <a href="/">TV SERIES</a>
+          <a href="/">TRAILERS</a>
+        </nav>
+        <button onClick={handleToggleFavs}>
+          <FontAwesomeIcon icon={faStar} /> {favs.length || 0}
+        </button>
+      </div>
+      <section className={favMenu} name="menuFavs">
+        {favs.map((favMovie) => (
+          <FavCard key={favMovie.name} movie={favMovie} />
+        ))}
+      </section>
       <section className={inputsSection}>
         <div>
           <button

@@ -39,7 +39,7 @@
     color: #ffd700;
     border-bottom: 2px solid #ffd700;
 }
-.navAndFavContainer button:not(.menuButton){
+.favButton{
     font-family: inherit;
     background-color: #ffd700;
     color: #fff;
@@ -50,9 +50,9 @@
     cursor: pointer;
     transition: ease .3s;
 }
-.navAndFavContainer button:hover:not(.menuButton){
+.favButtonSelect{
     color: #ffd700;
-    background: #eee;
+    background: #ddd;
 }
 .inputsSection{
     margin-bottom: 0.5em;
@@ -178,6 +178,7 @@
     align-items: flex-end;
     max-height: 420px;
     width: 300px;
+    background-color: #ddd;
     overflow-y: scroll;
     transition: ease .4s;
 }
@@ -207,6 +208,9 @@
     }
     .navMenuSection:not(.showMenu){
         left:-768px;
+    }
+    .favMenu{
+        top: 2em;
     }
 }
 @media (max-width: 500px){

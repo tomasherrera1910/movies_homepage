@@ -41,6 +41,7 @@ export default function LandingPage() {
           sliderValue={sliderValue}
           setViewGrid={setViewGrid}
           favs={favs}
+          handleDeleteFav={removeLocalStorage}
         />
         <div className={cardContainer} key={search}>
           {moviesVotesAverage

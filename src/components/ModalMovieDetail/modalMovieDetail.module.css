@@ -80,6 +80,7 @@
     text-transform: uppercase;
 }
 .sectionMovieTitle .publishDate{
+    text-align: center;
     background: #ccc;
     font-size: 10px;
     padding: 0.1em 0.3em;
@@ -128,21 +129,20 @@
 .buttonWatchTrailer,
 .buttonWatchlist,
 .buttonRemoveFav{
-    display: inline-block;
     border:none;
-    padding: 1.5em 0.5em;
+    padding: 1.5em 0;
     font-size: 16px;
     cursor:pointer;
     transition: ease-in-out .3s;
     text-align:center;
     width: 50%;
     height:100%;
-    
 }
 .buttonWatchTrailer{
     background-color:#ffd700;
     color: #fff;
     text-decoration: none;
+    display: inline-block;
 }
 .buttonWatchlist{
     background-color:#000;
@@ -173,10 +173,44 @@
     .buttonWatchTrailer,
     .buttonWatchlist,
     .buttonRemoveFav{
-        padding: 1em 0.5em;
+        padding: 1em 0;
     }
     .buttonRemoveFav{
         font-size: 12px;
     }
-    
+}
+@media (max-width: 600px){
+    .sectionMovieTitle .publishDate{
+        font-size: 8px;
+    }
+    .sectionMovieTitle .genres{
+        font-size: 8px;
+    }
+    .buttonWatchTrailer,
+    .buttonWatchlist,
+    .buttonRemoveFav{
+        padding:1em 0;
+    }
+}
+@media (max-width: 535px){
+    .cardDetail img{
+        display: none;
+    }
+}
+@media (max-width: 319px){
+    .sectionMovieTitle h3{
+        font-size: 14px;
+    }
+    .sectionMovieTitle .publishDate{
+        font-size: 8px;
+    }
+    .sectionMovieTitle .genres{
+        font-size: 8px;
+    }
+    .cardDetail img{
+        display: none;
+    }
+    .buttonRemoveFav{
+        font-size: 8px;
+    }
 }

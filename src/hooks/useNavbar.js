@@ -1,5 +1,5 @@
 import styles from "../components/Navbar/navbar.module.css"
-const { buttonActive, showMenu, showFavs } = styles
+const { buttonActive, showMenu, showFavs, favButtonSelect } = styles
 
 export function useNavbar(setViewGrid) {
   const handleSlider = () => {
@@ -22,6 +22,8 @@ export function useNavbar(setViewGrid) {
   const handleToggleFavs = () => {
     const favsMenu = document.querySelector('[name="menuFavs"]')
     favsMenu.classList.toggle(showFavs)
+    const favButton = document.querySelector('[name="favButton"]')
+    favButton.classList.toggle(favButtonSelect)
   }
   return { handleSlider, handleViewClick, handleToggleMenu, handleToggleFavs }
 }

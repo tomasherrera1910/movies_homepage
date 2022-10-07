@@ -1,0 +1,51 @@
+.cardFavStyle{
+ display:flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 0.5em;
+ transition: ease .3s;
+ border-bottom: 1px solid #ccc;
+}
+.cardFavStyle a{
+    text-decoration: none;
+    width: 50px;
+    height: 75px;
+    transition: ease .4s;
+    cursor: pointer;
+}
+.cardFavStyle a:hover{
+    transform: scale(1.1);
+}
+.cardFavStyle img{
+    height: 75px;
+    width: 50px;
+    object-fit: cover;
+}
+.cardFavStyle h3{
+    font-weight:400;
+    font-size: 14px;
+    max-width: 100px;
+    max-height: 50px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: ease-in-out .3s;
+}
+.cardFavStyle h3:hover{
+    color: #ffd700;
+    white-space: normal;
+    line-height: 1.1;
+}
+.cardFavStyle .deleteFav{
+    background:none;
+    color: #000;
+    border:none;
+    cursor:pointer;
+    padding: 0.5em;
+    height:75px;
+    transition: ease-in-out .3s;
+}
+.cardFavStyle .deleteFav:hover{
+    background-color:#a00b0b;
+    color: #fff;
+}

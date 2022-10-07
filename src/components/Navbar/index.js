@@ -21,6 +21,7 @@ const {
   navAndFavContainer,
   menuButton,
   favMenu,
+  favButton,
 } = styles
 export default function Navbar({
   onChangeSearch,
@@ -30,6 +31,7 @@ export default function Navbar({
   sliderValue,
   setViewGrid,
   favs,
+  handleDeleteFav,
 }) {
   const { handleToggleMenu, handleToggleFavs, handleSlider, handleViewClick } =
     useNavbar(setViewGrid)
@@ -51,13 +53,21 @@ export default function Navbar({
           <a href="/">TV SERIES</a>
           <a href="/">TRAILERS</a>
         </nav>
-        <button onClick={handleToggleFavs}>
+        <button
+          onClick={handleToggleFavs}
+          name="favButton"
+          className={favButton}
+        >
           <FontAwesomeIcon icon={faStar} /> {favs.length || 0}
         </button>
       </div>
       <section className={favMenu} name="menuFavs">
         {favs.map((favMovie) => (
-          <FavCard key={favMovie.name} movie={favMovie} />
+          <FavCard
+            key={favMovie.id}
+            movie={favMovie}
+            handleDeleteFav={handleDeleteFav}
+          />
         ))}
       </section>
       <section className={inputsSection}>

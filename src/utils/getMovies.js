@@ -11,8 +11,8 @@ export async function getGenres() {
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`
   ).then((response) => response.json())
 }
-export async function getUpcomingMovies() {
+export async function getUpcomingMovies(page) {
   return fetch(
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`
   ).then((response) => response.json())
 }

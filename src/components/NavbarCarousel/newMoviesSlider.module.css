@@ -1,6 +1,11 @@
 .header{
     width: 100%;
     height: 400px;
+    z-index: 0;
+}
+.swiperContainer{
+    width: 100%;
+    height: 400px;
     background-size: cover;
     color: #fff;
     display:flex;
@@ -17,6 +22,11 @@
     text-shadow: 2px 1px 4px #000;
     font-weight: 500;
     margin-top: 1em;
+    line-height: 1.1;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .genres{
     font-size: 14px;
@@ -25,10 +35,12 @@
     font-weight: 400;
 }
 .watchTrailerButton{
+    display: inline-block;
     font-family: inherit;
     padding: 0.8em 1.6em;
     background-color: #ffd007;
-    border:none;
+    text-decoration: none;
+    color: #000;
     font-weight: 500;
     cursor: pointer;
     border-radius: 2em;
@@ -52,3 +64,4 @@
     font-weight: 200;
     letter-spacing: 2px;
 }
+

@@ -1,6 +1,6 @@
 import { useMovies } from "../../hooks/useMovies"
 import { useFavs } from "../../hooks/useFavs"
-import NewMoviesSlider from "../NewMoviesSlider"
+import NavbarCarousel from "../NavbarCarousel"
 import Navbar from "../Navbar"
 import MovieCard from "../MovieCard"
 import Footer from "../Footer"
@@ -31,7 +31,7 @@ export default function LandingPage() {
   if (loading) return <span>Loading movies... 😎</span>
   return (
     <main className={container}>
-      <NewMoviesSlider />
+      <NavbarCarousel />
       <section className={mainSectionContainer}>
         <Navbar
           onChangeSearch={handleChangeSearch}

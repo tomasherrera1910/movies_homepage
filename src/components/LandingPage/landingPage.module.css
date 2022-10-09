@@ -22,3 +22,8 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+@media (max-width:769px) {
+    .mainSectionContainer{
+        top:0;
+    }
+}

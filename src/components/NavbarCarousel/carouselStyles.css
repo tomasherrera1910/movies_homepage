@@ -1,0 +1,31 @@
+/* STYLES FOR SWIPERJS CAROUSEL */
+.swiper-button-prev,
+.swiper-button-next{ 
+    color: rgba(255, 255, 255, 0.6);
+    right:16px;
+    left: auto;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after{ 
+    --swiper-navigation-size: auto;
+    font-size: 16px;
+    font-weight: 900;
+    border: 3px solid rgba(255, 255, 255, 0.6);;
+    border-radius: 50%;
+    padding: 0.2em 0.4em;
+}
+.swiper-button-prev{
+    top: 45%;
+    transform: rotate(90deg);
+}
+.swiper-button-next{
+    top:55%;
+    transform: rotate(90deg);
+}
+.swiper-pagination{
+    left: 10px;
+    width: 15px;
+}
+.swiper-pagination-bullet-active {
+    --swiper-pagination-color: #fff;
+}

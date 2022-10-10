@@ -43,8 +43,6 @@ export function useMovies() {
     })
   }
 
-  const handleChangeSearch = (e) => setSearchInputValue(e.target.value)
-
   const handleSubmitSearch = (e) => {
     e.preventDefault()
     setMoviesVotesAverage(null)
@@ -75,7 +73,7 @@ export function useMovies() {
     loading,
     loadingMoreMovies,
     handlePage,
-    handleChangeSearch,
+    setSearchInputValue,
     handleSubmitSearch,
     handleChangeSlider,
   }

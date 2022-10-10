@@ -24,7 +24,7 @@ const {
   favButton,
 } = styles
 export default function Navbar({
-  onChangeSearch,
+  setSearch,
   onSubmitSearch,
   search,
   onChangeSlider,
@@ -101,7 +101,11 @@ export default function Navbar({
           />
         </label>
         <form className={textInputBox} onSubmit={onSubmitSearch}>
-          <input type="text" value={search} onChange={onChangeSearch} />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <FontAwesomeIcon icon={faMagnifyingGlass} className={searchIcon} />
         </form>
       </section>

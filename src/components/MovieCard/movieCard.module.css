@@ -4,6 +4,7 @@
     box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.3);
     background-color: #fff;
     transition: ease .5s;
+    position:relative;
 }
 .movieCardSimple{
     display:flex;
@@ -13,6 +14,7 @@
     background-color: #fff;
     box-shadow: 1px 0 2px 1px rgba(0, 0, 0, 0.5);
     transition: ease .3s;
+    position: relative;
 }
 .movieCardStyle img{
     width:200px;
@@ -25,10 +27,8 @@
 }
 .movieCardStyle .movieCardFooter{
     padding: 0.2em 0.5em 0.7em 0.5em;
-    position:relative;
 }
 .movieCardSimple .movieCardFooter{
-    position: relative;
     width: 100%;
     min-width: 300px;
     display:flex;
@@ -47,16 +47,17 @@
 }
 .movieCardSimple .movieCardFooter h3{
     width:calc(360px - 0.5em);
+    max-width: 90%;
 }
 .movieCardStyle .movieCardFooter h3{
     width:calc(200px - 0.5em);
 }
 .genres, .genresSimple{
+    max-width: 90%;
     overflow:hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-weight: 500;
-    width: 90%;
     font-size: 10px;
     margin-bottom: 6px;
     color: #ffd700;
@@ -97,7 +98,7 @@
         max-width: 100%;
     }
     .genresSimple{
-        width:260px;
+        width:240px;
     }
     .movieCardSimple .movieCardFooter h3{
         width:240px;
@@ -113,10 +114,10 @@
 }
 @media (max-width: 348px){
     .genresSimple{
-        width:160px;
+        width:120px;
     }
     .movieCardSimple .movieCardFooter h3{
-        width:160px;
+        width:120px;
     }
 }
 @media (max-width: 310px){

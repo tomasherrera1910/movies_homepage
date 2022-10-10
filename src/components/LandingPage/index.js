@@ -22,7 +22,7 @@ export default function LandingPage() {
     loading,
     loadingMoreMovies,
     handlePage,
-    handleChangeSearch,
+    setSearchInputValue,
     handleSubmitSearch,
     handleChangeSlider,
   } = useMovies()
@@ -34,7 +34,7 @@ export default function LandingPage() {
       <NavbarCarousel />
       <section className={mainSectionContainer}>
         <Navbar
-          onChangeSearch={handleChangeSearch}
+          setSearch={setSearchInputValue}
           onSubmitSearch={handleSubmitSearch}
           search={searchInputValue}
           onChangeSlider={handleChangeSlider}

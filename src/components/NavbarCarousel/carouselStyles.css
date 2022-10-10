@@ -29,3 +29,14 @@
 .swiper-pagination-bullet-active {
     --swiper-pagination-color: #fff;
 }
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 500px){
+    .swiper-button-prev{
+        top: 40%;
+    }
+    .swiper-button-next{
+        top:60%;
+    }
+}

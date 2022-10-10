@@ -23,7 +23,11 @@
     font-weight: 500;
     margin-top: 1em;
     line-height: 1.1;
-    max-width: 100%;
+    /* line-clamp: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -55,13 +59,42 @@
     margin-top: 1em;
     font-size: 14px;
     font-weight: 300;
-    text-shadow: 2px 1px 4px #000;
+    text-shadow: 3px 2px 4px #000;
     letter-spacing: 1px;
 }
 .spanReleaseDate{
     color:#ffd007;
-    text-shadow: 2px 1px 4px #000;
+    text-shadow: 3px 2px 4px #000;
     font-weight: 200;
     letter-spacing: 2px;
 }
-
+@media (max-width: 769px){
+    .header{
+        height: 300px;
+    }
+    .headerContainer{
+        padding-left: 2em;
+    }
+    .headerContainer h3{
+        font-size: 3em;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+}
+@media (max-width: 500px){
+    .header{
+        height: 200px;
+    }
+    .headerContainer h3{
+        font-size: 1.5em;
+    }
+    .genres{
+        font-size: 12px;
+    }
+    .watchTrailerButton{
+        padding: 0.2em 0.4em;
+    }
+}

@@ -12,13 +12,14 @@ const {
   sectionMovieStats,
   publishDate,
   genres,
+  title,
 } = styles
 
 export default function MovieDetailsInfo({ movie }) {
   return (
     <div className={divDetailsMovie}>
       <section className={sectionMovieTitle}>
-        <h3>{movie.title}</h3>
+        <h3 className={title}>{movie.title}</h3>
         <div>
           <DisplayGenres genres={movie.genre_ids} style={genres} />
           <span className={publishDate}>{movie.release_date}</span>

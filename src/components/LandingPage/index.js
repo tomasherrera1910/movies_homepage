@@ -7,6 +7,8 @@ import Footer from "../Footer"
 import NextPageButton from "../NextPageButton"
 
 import styles from "./landingPage.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 const { container, mainSectionContainer, cardContainer } = styles
 
 export default function LandingPage() {
@@ -28,7 +30,6 @@ export default function LandingPage() {
   } = useMovies()
   const { favs, addLocalStorage, removeLocalStorage, isFav } = useFavs()
 
-  if (loading) return <span>Loading movies... 😎</span>
   return (
     <main className={container}>
       <NavbarCarousel />
@@ -65,6 +66,9 @@ export default function LandingPage() {
                   isFav={isFav}
                 />
               ))}
+          {loading && !loadingMoreMovies && (
+            <FontAwesomeIcon icon={faSpinner} spin />
+          )}
         </div>
         <NextPageButton
           pageInfo={pageInfo}

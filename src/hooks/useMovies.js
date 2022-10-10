@@ -12,10 +12,11 @@ export function useMovies() {
   const search = query.get("search")
   const [sliderValue, setSliderValue] = useState(1)
   const [viewGrid, setViewGrid] = useState(true)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [loadingMoreMovies, setLoadingMoreMovies] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     getMovies(
       search
         ? `/search/movie?query=${search}&page=${pageInfo.page}`

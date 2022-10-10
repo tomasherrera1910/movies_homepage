@@ -13,7 +13,9 @@ export default function NavbarCarousel() {
   return (
     <header className={header}>
       {!upcomingMovies.length ? (
-        <p>Cargando navbar...</p>
+        <section
+          style={{ backgroundColor: "#000", width: "100%", height: "100%" }}
+        ></section>
       ) : (
         <Swiper
           modules={[Pagination, Navigation, Autoplay, A11y]}

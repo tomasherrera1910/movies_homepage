@@ -20,7 +20,8 @@
 
 .cardDetail{
     background:#fff;
-    width: 768px;
+    width: auto;
+    max-width: 768px;
     height: 300px;
     position: relative;
     display:flex;
@@ -45,6 +46,7 @@
     object-fit: cover;
 }
 .rightSection{
+    max-width: calc(100% - 200px);
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,6 +66,7 @@
     padding: 0.5em 0.5em 0 0.5em;
     min-width: 480px;
     width: auto;
+    max-width: calc(100% - 200px);
     box-shadow: 1px 0 6px 1px rgba(0, 0, 0, 0.4);
 }
 .sectionMovieTitle{
@@ -75,10 +78,14 @@
     justify-content: space-between;
     align-items: center;
 }
-.sectionMovieTitle h3{
+.sectionMovieTitle .title{
     font-weight: 400;
     text-transform: uppercase;
     line-height: 1.1;
+    width: 90%;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
 }
 .sectionMovieTitle .publishDate{
     text-align: center;

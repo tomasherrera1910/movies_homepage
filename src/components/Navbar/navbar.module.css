@@ -1,179 +1,214 @@
-.navbar{
+.navbar {
     width: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap:0.5rem;
+    gap: 0.5rem;
     margin-bottom: 1em;
     padding: 0 0.5em;
 }
-.navAndFavContainer{
-    display:flex;
+
+.navAndFavContainer {
+    display: flex;
     align-self: flex-start;
     width: 100%;
 }
+
 .navMenuSection {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap:1rem;
+    gap: 1rem;
     border-bottom: solid 1px #ddd;
     text-align: center;
 }
-.navMenuSection a{
+
+.navMenuSection a {
     padding: 1em 0.5em;
     text-decoration: none;
     font-size: 12px;
     transition: ease .3s;
 }
-.navMenuSection a:not(.active){
+
+.navMenuSection a:not(.active) {
     color: #000;
 }
-.navMenuSection a:hover{
+
+.navMenuSection a:hover {
     color: #f1d94e;
 }
-.active{
+
+.active {
     font-weight: 700;
     color: #ffd700;
     border-bottom: 2px solid #ffd700;
 }
-.favButton{
+
+.favButton {
     font-family: inherit;
     background-color: #ffd700;
     color: #fff;
-    border:none;
+    border: none;
     font-size: 12px;
     padding: 0.3em 0.5em;
     border-radius: 0.3em;
     cursor: pointer;
     transition: ease .3s;
 }
-.favButtonSelect{
+
+.favButton:hover {
+    opacity: .6;
+}
+
+.favButtonSelect {
     color: #ffd700;
     background: #ddd;
 }
-.inputsSection{
+
+.inputsSection {
     margin-bottom: 0.5em;
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
     gap: 1em;
 }
-.inputsSection button{
-    cursor:pointer;
+
+.inputsSection button {
+    cursor: pointer;
     transition: ease .3s;
     font-size: 16px;
     padding: 0 0.5em;
     text-align: center;
 }
-.inputsSection button:not(.buttonActive){
+
+.inputsSection button:not(.buttonActive) {
     border: none;
     color: #bbb;
 }
-.inputsSection button:hover{
+
+.inputsSection button:hover {
     color: #666;
 }
-.buttonActive{
+
+.buttonActive {
     color: #444;
     background-color: #ddd;
     border: 1px solid #000;
     border-radius: 8px;
 }
-.inputsSection label{
+
+.inputsSection label {
     color: #666;
     opacity: .6;
     font-size: 12px;
     transition: opacity .3s;
 }
-.slider{
+
+.slider {
     -webkit-appearance: none;
-    display:block;
+    display: block;
     width: 90vw;
     max-width: 240px;
     height: 4px;
-    background: linear-gradient(90deg,#ffd700 10%, #ddd 10%);
+    background: linear-gradient(90deg, #ffd700 10%, #ddd 10%);
     opacity: .8;
     transition: opacity .3s;
 }
+
 .slider:hover,
-.slider:hover .inputsSection label{
-    opacity:1;
+.slider:hover .inputsSection label {
+    opacity: 1;
 }
+
 /* for google chrome */
-.slider::-webkit-slider-thumb{
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 12px;
-    height:12px;
+    height: 12px;
     background: #ffd700;
     border-radius: 100%;
-    cursor:pointer
+    cursor: pointer
 }
+
 /* for mozilla firefox */
-.slider::-moz-range-thumb{
+.slider::-moz-range-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 12px;
-    height:12px;
+    height: 12px;
     background: #ffd700;
     border-radius: 100%;
-    cursor:pointer
+    cursor: pointer
 }
-.textInputBox{
-    position:relative;
-    width:100%;
+
+.textInputBox {
+    position: relative;
+    width: 100%;
 }
-.textInputBox input{
+
+.textInputBox input {
     font-family: inherit;
-    width:100%;
+    width: 100%;
     height: 24px;
     padding: 0.5em 2em 0.5em 0.5em;
-    background:none;
-    outline:none;
-    border:none;
-    border-bottom: 2px solid #ccc;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #aaa;
 }
-.searchIcon{
-    position:absolute;
+
+.searchIcon {
+    position: absolute;
     right: 0;
-    top:0;
-    line-height:24px;
-    color: #ccc;
+    top: 0;
+    line-height: 24px;
+    color: #aaa;
 }
-.menuButton{
+
+.textInputBox input:focus {
+    border-bottom: 2px solid #777;
+}
+
+.menuButton {
     margin: 0.5em 0 0 0.5em;
     background: none;
     border: none;
     cursor: pointer;
     transition: ease .3s;
-    display:none;
+    display: none;
     align-self: flex-start;
     color: #555;
 }
-.menuButton:hover{
+
+.menuButton:hover {
     color: #f1d94e;
 }
-.menuButton span{
+
+.menuButton span {
     height: 24px;
     width: auto;
-    display:inline-flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5em;
 }
-.menuButton svg{
+
+.menuButton svg {
     font-size: 22px;
 }
-.showMenu{
-    left:0;
+
+.showMenu {
+    left: 0;
 }
-.favMenu{
-    position:absolute;
+
+.favMenu {
+    position: absolute;
     z-index: 2;
-    top:2.5em;
+    top: 2.5em;
     right: 0;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     max-height: 420px;
@@ -182,23 +217,28 @@
     overflow-y: scroll;
     transition: ease .4s;
 }
-.favMenu:not(.showFavs){
-    display:none;
+
+.favMenu:not(.showFavs) {
+    display: none;
 }
-.showFavs{
-    display:block;
+
+.showFavs {
+    display: block;
 }
-@media (max-width: 767px){
-    .navAndFavContainer{
-    justify-content: space-between;
-    padding: 0 2em;
+
+@media (max-width: 767px) {
+    .navAndFavContainer {
+        justify-content: space-between;
+        padding: 0 2em;
     }
-    .menuButton{
-        display:block;
+
+    .menuButton {
+        display: block;
     }
+
     .navMenuSection {
         flex-direction: column;
-        position:absolute;
+        position: absolute;
         top: 36px;
         background-color: #eee;
         font-weight: 500;
@@ -206,21 +246,24 @@
         z-index: 4;
         transition: ease-in-out .4s;
     }
-    .navMenuSection:not(.showMenu){
-        left:-768px;
+
+    .navMenuSection:not(.showMenu) {
+        left: -768px;
     }
-    .favMenu{
+
+    .favMenu {
         top: 2em;
     }
 }
-@media (max-width: 500px){
-    .inputsSection{
+
+@media (max-width: 500px) {
+    .inputsSection {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    
-    .textInputBox{
+
+    .textInputBox {
         width: 90%;
     }
 }

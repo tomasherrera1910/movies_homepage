@@ -45,13 +45,8 @@ export default function Navbar({
         </button>
         <nav className={navMenuSection} name="menuNav">
           <a href="/" className={active}>
-            TRENDING
+            TRENDING MOVIES
           </a>
-          <a href="/">IN THEATERS</a>
-          <a href="/">COMING SOON</a>
-          <a href="/">CHARTS</a>
-          <a href="/">TV SERIES</a>
-          <a href="/">TRAILERS</a>
         </nav>
         <button
           onClick={handleToggleFavs}
